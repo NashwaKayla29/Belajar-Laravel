@@ -69,4 +69,7 @@ Route::get('myself/{name}/{bb}/{tb}', function ($a, $bb, $tb){
     return "nama: $a <br> berat badan: $bb <br> tinggi badan: $tb <br> nilai bmi: $bmi <br> keterangan: $ket ";
 });
 
-
+//
+Route::get('myname/{nama?}', function($a = "Abdu") {
+    return "my name is .$a";
+});
