@@ -1,8 +1,16 @@
 <?php
 
 use App\Models\Barang;
+use App\Models\Merk;
+use App\Models\Pengguna;
 use App\Models\Post;
+use App\Models\Produk;
 use App\Models\Siswa;
+use App\Models\Telepon;
+use App\Models\pembelis;
+use App\Models\Barang2;
+use App\Models\Transaksi;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -106,4 +114,51 @@ Route::get('/testsiswa', function () {
     // $data->save();
 
     return $data;
+});
+
+//route penggunan
+Route::get('/testpengguna', function () {
+    $pengguna = Pengguna::all();
+    return view('tampil_pengguna', compact('pengguna'));
+});
+
+//route telepon
+Route::get('/testtelepon', function () {
+    $telepon = Telepon::all();
+    return view('tampil_telepon', compact('telepon'));
+});
+
+//route merk
+Route::get('/testmerk', function () {
+    $merk = Merk::all();
+
+    return view('tampil_merk', compact('merk'));
+});
+
+//route produk
+Route::get('/testproduk', function () {
+    $produk = Produk::all();
+
+    return view('tampil_produk', compact('produk'));
+});
+
+//route pembeli
+Route::get('/testpembeli', function () {
+    $pembeli = Pembelis::all();
+
+    return view('tampil_pembeli', compact('pembeli'));
+}); 
+
+//route barang2
+Route::get('/testbarang2', function () {
+    $barang = Barang::all();
+
+    return view('tampil_barang', compact('barang'));
+});
+
+//route transaksi
+Route::get('/testtransaksi', function () {
+    $transaksi = Transaksi::all();
+
+    return view('tampil_transaksi', compact('transaksi'));
 });
