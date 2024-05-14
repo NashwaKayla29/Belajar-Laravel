@@ -10,6 +10,9 @@ use App\Models\Telepon;
 use App\Models\pembelis;
 use App\Models\Barang2;
 use App\Models\Transaksi;
+use App\Models\Template;
+use App\Models\Template2;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -161,4 +164,18 @@ Route::get('/testtransaksi', function () {
     $transaksi = Transaksi::all();
 
     return view('tampil_transaksi', compact('transaksi'));
+});
+
+// route template
+Route::get('/template', function () {
+    $posts = Post::all();
+
+    return view('template', compact('posts'));
+});
+
+// route template2
+Route::get('/template2', function () {
+    $produk = Produk::all();
+
+    return view('template2', compact('produk'));
 });
