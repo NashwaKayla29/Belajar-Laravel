@@ -1,20 +1,18 @@
 <?php
 
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\MerkController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProdukController;
 use App\Models\Barang;
 use App\Models\Merk;
+use App\Models\pembelis;
 use App\Models\Pengguna;
 use App\Models\Post;
 use App\Models\Produk;
 use App\Models\Siswa;
 use App\Models\Telepon;
-use App\Models\pembelis;
-use App\Models\Barang2;
 use App\Models\Transaksi;
-use App\Models\Template;
-use App\Models\Template2;
-
-
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -150,7 +148,7 @@ Route::get('/testpembeli', function () {
     $pembeli = Pembelis::all();
 
     return view('tampil_pembeli', compact('pembeli'));
-}); 
+});
 
 //route barang2
 Route::get('/testbarang2', function () {
@@ -166,16 +164,35 @@ Route::get('/testtransaksi', function () {
     return view('tampil_transaksi', compact('transaksi'));
 });
 
-// route template
-Route::get('/template', function () {
-    $posts = Post::all();
+// route template post
+Route::get('post', [PostController::class, 'menampilkan']);
+Route::get('post/{id}', [PostController::class, 'show']);
 
-    return view('template', compact('posts'));
-});
+// Route::get('/template', function () {
+//     $posts = Post::all();
 
-// route template2
-Route::get('/template2', function () {
-    $produk = Produk::all();
+//     return view('template', compact('posts'));
+// });
 
-    return view('template2', compact('produk'));
-});
+//route template2 produk
+Route::get('produk', [ProdukController::class, 'menampilkan']);
+Route::get('produk/{id}', [ProdukController::class, 'show']);
+
+//route template merk
+Route::get('merk', [MerkController::class, 'menampilkan']);
+Route::get('merk/{id}', [MerkController::class, 'show']);
+
+// Route::get('/template2', function () {
+//     $produk = Produk::all();
+
+//     return view('template2', compact('produk'));
+// });
+
+//
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//CRUD BRAND
+use Illuminate\Support\Facades\Route;
+Route::resource('brand', BrandController::class);

@@ -23,24 +23,20 @@
         <div class="container">
             <div class="row mt-5">
                 <center>
-                    <h3>List Artikel</h3>
+                    <h3>Show Merk</h3>
                 </center>
             </div>
             <div class="row mt-5">
-                @foreach ($produk as $data)
-                    <div class="col-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://freepngimg.com/save/97580-meme-photos-doge-hd-image-free/920x952" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $data->nama_produk }}</h5>
-                                <p class="card-text">{{ $data ->jumlah}}</p>
-                                <p class="card-text">{{ $data ->tanggal_produksi}}</p>
-                                <p class="card-text">{{ $data ->merk->nama_merk}}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images.unsplash.com/photo-1715412406587-352ef7ed3f9b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $merk ->nama_merk}}</h5>
+                            {{-- <p class="card-text">{{ $post ->content}}</p> --}}
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
 
         </div>

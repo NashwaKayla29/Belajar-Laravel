@@ -5,14 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Merk extends Model
+class Brand extends Model
 {
     use HasFactory;
-    protected $fillable = ['id', 'nama_merk'];
+    protected $fillabel = ['id', 'name_brand'];
+    
     public $timestamps = true;
 
-    public function produk ()
-    {
-        return $this->hasMany(Produk::class);
-    }
 }

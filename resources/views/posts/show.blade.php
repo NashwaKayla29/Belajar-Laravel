@@ -23,22 +23,21 @@
         <div class="container">
             <div class="row mt-5">
                 <center>
-                    <h3>List Artikel</h3>
+                    <h3>Show Artikel</h3>
                 </center>
             </div>
             <div class="row mt-5">
-                @foreach ($posts as $data)
-                    <div class="col-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://w0.peakpx.com/wallpaper/403/740/HD-wallpaper-dark-nature-alam-black-bunga-flower-macro-minimalis.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $data ->title}}</h5>
-                                <p class="card-text">{{ $data ->content}}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://images.unsplash.com/photo-1715390321213-c8d88b3e024a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $post ->title}}</h5>
+                            <p class="card-text">{{ $post ->content}}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
 
         </div>
